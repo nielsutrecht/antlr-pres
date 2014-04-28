@@ -1,14 +1,24 @@
-antlr-pres
-==========
-
 Antlr 4 Presentation Code
+=========================
 
-Interesting links:
+This repo contains a small simple grammar and some java code used to demonstrate Antlr 4.
+
+
+Notes
+-----
+* Order of rules matter! A higher matching rule has precedence over lower matching rules.
+* Lexing / parsing are two totally different stages. A lexer turns a character stream into a stream of tokens. The parser then builds an Abstract Syntax Tree from this token stream.
+* Antlr 4 is not backward compatible! 
+
+
+Interesting links
+-----------------
 * [Antlr 4 homepage](http://www.antlr.org/)
 * [Antlr 4 example grammars](https://github.com/antlr/grammars-v4)
 * [Antlr 4 editor plugin (Eclipse)](https://github.com/jknack/antlr4ide)
 
-Integrating Antlr 4 in maven;
+Maven integration
+-----------------
 Pom.xml:
 
     <build>
