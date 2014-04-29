@@ -13,13 +13,13 @@ expr
 
 number: NUMBER;
 
-PLUS: 'plus' | '+';
-MINUS: 'minus' | '-';
-TIMES: 'times' | '*';
-DIV: 'div' | '/';
+PLUS: 	'plus' 	| '+';
+MINUS: 	'minus' | '-';
+TIMES: 	'times' | '*';
+DIV: 	'div' 	| '/';
 
 NUMBER: '-'? [0-9]+;
-
-WS: [ \t\r\n]+ -> skip;
 BR_OPEN: '(';
 BR_CLOSE: ')';
+
+WS: [ \t\r\n]+ -> skip;

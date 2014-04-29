@@ -5,17 +5,11 @@ import org.junit.Test;
 
 import parser.SimpleLexer;
 import parser.SimpleParser;
+import parser.SimpleParser.CalcContext;
 import parser.SimpleParser.ExprContext;
 
 public class SimpleParserTest  {
-	
-	private ExprContext parseExpression(String expression) {
-		SimpleLexer lexer = new SimpleLexer(new ANTLRInputStream(expression));
-		SimpleParser parser = new SimpleParser(new CommonTokenStream(lexer));
-		
-		return parser.calc().expr();
-	}
-	
+
 	@Before
 	public void setup() {
 		
@@ -23,9 +17,17 @@ public class SimpleParserTest  {
 	
 	@Test
 	public void testExpr() {
-		ExprContext ctx = parseExpression("(1+2)*3+10/2*80+34");
-		int result = visit(ctx);
+		String expression = "(1 + 2) * 5 - 10 / 2";
+		SimpleLexer lexer = new SimpleLexer(new ANTLRInputStream(expression));
+		SimpleParser parser = new SimpleParser(new CommonTokenStream(lexer));
+		
+		CalcContext ctx = parser.calc();		
+		System.out.println(ParserTestUtil.treeToString(ctx, parser));
+		int result = visit(ctx.expr());
+		
+		
 		System.out.println(result);
+		
 	}
 	
 	private int visit(ExprContext ctx) {

@@ -14,6 +14,7 @@ Notes
 Interesting links
 -----------------
 * [Antlr 4 homepage](http://www.antlr.org/)
+* [Antlr 4 github](https://github.com/antlr/antlr4)
 * [Antlr 4 example grammars](https://github.com/antlr/grammars-v4)
 * [Antlr 4 editor plugin (Eclipse)](https://github.com/jknack/antlr4ide)
 
